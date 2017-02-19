@@ -1,5 +1,8 @@
 <%= @course.coursename %>
 <%= @course.instructor %>
+<% if student_signed_in? %>
+  <%= link_to "Reserved the seat", add_student_course_path(@course), :method => :put %>
+<% end %>
 <div class="col-md-8">
     <% if @course.students.any? %>
       <h3>Courses (<%= @course.students.count %>)</h3>

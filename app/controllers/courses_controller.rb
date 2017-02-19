@@ -29,6 +29,17 @@ class CoursesController < ApplicationController
     end
   end
 
+  def add_student
+     @student = current_student
+     @course = Course.find(params[:id])
+     if @student.courses.exists?(@course)
+       redirect_to @course
+     else
+       @student.courses << @course
+       redirect_to @course
+     end
+   end
+
   private
 
     def course_params

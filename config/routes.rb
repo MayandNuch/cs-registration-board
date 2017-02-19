@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :teachers
   resources :courses,          only: [:create, :destroy]
 
+  resources :courses do
+    member do
+      put :add_student
+    end
+  end
+
   root to: 'students#index'
   get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
