@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>User's table</h1>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+        <tr>
+          <td><%= student.firstname%></td>
+          <td><%= link_to student.email, student %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
