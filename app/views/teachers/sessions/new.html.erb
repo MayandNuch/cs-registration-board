@@ -1,26 +1,35 @@
-<h2>Log in</h2>
+<div class="container">
+  	<div id="login-box" class="centered">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  		<div class="logo">
+  			<img src="/assets/cat.jpg" class="img img-responsive img-circle center-block"/>
+  			<h1 class="logo-caption">CS <span class="tweak">L</span>ogin</h1>
+        <h1 class="logo-caption">Teacher's site</h1>
+  		</div><!-- /.logo -->
+  		<div class="controls">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true,class: "form-control", :value => "Email" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "off",class: "form-control",:value => "Password" %>
+          </div>
+          <br>
+          <div class="actions">
+            <%= f.submit "Log in",class: "btn btn-default btn-block btn-custom"%>
+          </div>
+  			<div id="regis">
+  			    Don't have an account?
+  			  <%= link_to "Register", new_teacher_registration_path, :method => :get %>
+  			</div>
+        <div id="regis">
+  			    Are you Students?
+  			    <%= link_to "Student's site", new_student_session_path, :method => :get %>
+  			</div>
+  		</div><!-- /.controls -->
+      <% end %>
+  	</div><!-- /#login-box -->
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "teachers/shared/links" %>
+</div><!-- /.container -->
+<div id="particles-js"></div>
