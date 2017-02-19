@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.navbar-default {
+    background-color: black;
+    border-color: #e7e7e7;
+}
+navbar.less:154
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+navbar.less:142
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+
+}
+navbar.less:15
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+body{
+  background-image: url("/assets/brick.jpg");
+  margin-top: 100px;
+}
+.navbar-default .navbar-nav>li>a {
+  color: white !important;
+}
+
+
+
+div.transbox {
+    /*margin: 30px;*/
+    /*background-color: #ffffff;*/
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.profile-head {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  float: left;
+  padding: 15px 5px;
+}
+
+div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.table>tbody>tr>td{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    background-color: steelblue;
+    border-top: 1px solid white;
+}
+
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+    background-color: grey;
+}

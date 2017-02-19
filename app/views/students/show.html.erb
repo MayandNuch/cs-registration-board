@@ -1,31 +1,50 @@
-<%= link_to "students", students_path %>
-<%= @student.email %>
-<%= @student.firstname %>
-<%= @student.lastname %>
-<%= @student.student_id %>
-<% if current_student == @student %>
-  <%= link_to "Edit", edit_student_registration_path %>
+<div class="container">
 
-<% end %>
+    <div class="profile-head" style="color:white;">
+        <div class="col-md- col-sm-4 col-xs-12">
+          <img src="/assets/student.jpg" class="img-responsive">
+          <h6><%= @student.firstname %> <%= @student.lastname %></h6>
+        </div><!--col-md-4 col-sm-4 col-xs-12 close-->
+        <div class="col-md-5 col-sm-5 col-xs-12 transparent-box">
+          <h1 style="font-size: 40px;"><%= @student.firstname %> <%= @student.lastname %> (Student)</h1>
+          <ul style="font-size: 15px;">
+          <li><span class="glyphicon glyphicon-education" ></span>  ID: <%= @student.student_id %></li>
+          <li><span class="glyphicon glyphicon-map-marker"></span> Thailand</li>
+          <li><span class="glyphicon glyphicon-envelope"></span><a style="color:white;" href="#" title="mail"> <%= @student.email %></a></li>
+          </ul>
+        </div><!--col-md-8 col-sm-8 col-xs-12 close-->
+        <center>
+        <div class="container">
 
-<div class="col-md-8">
-    <% if @student.courses.any? %>
-      <h3>Courses (<%= @student.courses.count %>)</h3>
-      <table class="table">
+          <div class="row col-md-6 col-md-offset-2 custyle" style="margin-left:300px;">
+            <p>Enrolled in: <%= @student.courses.count %> courses</p>
+          <table class="table table-striped custab">
           <thead>
-            <tr>
-              <th>Coursename</th>
-              <th>instructor</th>
-            </tr>
+              <tr>
+                  <th>Course Name</th>
+                  <th>Instructor</th>
+                  <th></th>
+              </tr>
           </thead>
-          <tbody>
-            <% @student.courses.each do |course| %>
-            <tr>
-              <td><%=link_to course.coursename,course%></td>
-              <td><%= course.instructor%></td>
-            </tr>
+            <% if @student.courses.any? %>
+              <% @student.courses.each do |course| %>
+              <tr>
+                  <td><%= course.coursename%></td>
+                  <td><%= course.instructor%></td>
+
+                  <td ><%=link_to "go to course",course, {:style => 'color: #FFFFFF'}%></td>
+              </tr>
+              <% end %>
             <% end %>
-          </tbody>
-        </table>
-    <% end %>
+          </table>
+          </div>
+        </div>
+        <br>
+        </center>
+
+
+
+    </div><!--profile-head close-->
+
+
 </div>

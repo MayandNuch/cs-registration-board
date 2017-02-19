@@ -1,15 +1,24 @@
-<ul class="nav nav-pills nav-justified">
-  <li><a href="/students">Students</a></li>
-  <li><a href="/teachers">Teachers</a></li>
-  <li><a href="/courses">Courses</a></li>
-  <% if student_signed_in? %>
-    <li><%= link_to "Profile", current_student %></li>
-    <li><%= link_to "Sign Out", destroy_student_session_path, :method => :delete %></li>
-  <% elsif teacher_signed_in? %>
-    <li><%= link_to "Profile", current_teacher %></li>
-    <li><%= link_to "Sign Out", destroy_teacher_session_path, :method => :delete %></li>
-  <% else %>
-    <li><%= link_to "Sign In", new_student_session_path, :method => :get %></li>
-    <li><%= link_to "Sign up", new_student_registration_path, :method => :get %></li>
-  <% end %>
-</ul>
+<nav id="main-nav" class="navbar navbar-default navbar-fixed-top" style="color: white;">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand " href="#" style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: white; ">CS WHITEBOARD</a>
+    </div>
+    <div id="navbar" class="font-custom">
+      <ul class="nav navbar-nav navbar-right" style="font-family: 'Montserrat', sans-serif; font-size: 13px; ">
+        <li><a href="/">Home</a></li>
+        <li><a href="/students">S Profile</a></li>
+        <li><a href="/teachers">T Profile</a></li>
+        <% if student_signed_in? %>
+          <li><%= link_to "Profile", current_student %></li>
+          <li><%= link_to "Sign Out", destroy_student_session_path, :method => :delete %></li>
+        <% elsif teacher_signed_in? %>
+          <li><%= link_to "Profile", current_teacher %></li>
+          <li><%= link_to "Sign Out", destroy_teacher_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "SignIn", new_student_session_path, :method => :get %></li>
+          <li><%= link_to "SignUp", new_student_registration_path, :method => :get %></li>
+        <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

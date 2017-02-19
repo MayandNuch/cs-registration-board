@@ -1,22 +1,18 @@
-<div class="container">
-  <h1>Course's table </h1>
-  <table class="table">
-      <thead>
-        <tr>
-          <th>Course Name</th>
-          <th>Instructor</th>
-          <th>Registered seat</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <% @courses.each do |course| %>
-        <tr>
-          <td><%= link_to course.coursename, course %></td>
-          <td><%= course.instructor%></td>
-          <td><%= course.students.count%></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-</div>
+<% @courses.each do |course| %>
+  <div class="services">
+    <div class="col-md-4">
+        <figure class="snip1174 navy col-md-4" style="height:440px; width:440px;">
+          <img src="/assets/ruby.jpg">
+          <figcaption>
+            <h2>Course: <%= course.coursename%></h2>
+            <p>
+              instructor: <%= course.instructor%>
+              <br>
+              registered: <%= course.students.count%>
+            </p>
+            <%= link_to "More info", course %>
+          </figcaption>
+        </figure>
+    </div>
+  </div>
+<% end %>
