@@ -41,23 +41,26 @@
             <p>Opened classes: <%= @teacher.courses.count %> class(es)</p>
 
           <table class="table table-striped custab">
-            <a href="#" class="btn btn-success btn-xs pull-right" style="margin-bottom:10px;"><b>+</b>Create</a>
+
           <thead>
               <tr>
                   <th>Course Name</th>
                   <th>Instructor</th>
                   <th>Seats Number</th>
                   <th></th>
+                  <th></th>
               </tr>
           </thead>
           <% if @teacher.courses.any? %>
             <% @teacher.courses.each do |course| %>
             <tr>
-                <td><%= link_to course.coursename, course %></td>
+                <td><%= course.coursename%></td>
                 <td><%= course.instructor%></td>
                 <td><%= course.students.count%></td>
+                <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
                 <td><%= button_to "delete", course, method: :delete,
                                        data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
+
             </tr>
               <% end %>
             <% end %>

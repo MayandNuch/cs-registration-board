@@ -34,8 +34,8 @@
               <tr>
                   <td><%= course.coursename%></td>
                   <td><%= course.instructor%></td>
-
-                  <td ><%=link_to "go to course",course, {:style => 'color: #FFFFFF'}%></td>
+                  <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
+    
               </tr>
               <% end %>
             <% end %>
