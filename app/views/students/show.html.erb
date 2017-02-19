@@ -3,3 +3,7 @@
 <%= @student.firstname %>
 <%= @student.lastname %>
 <%= @student.student_id %>
+<% if current_student == @student %>
+  <%= link_to "Edit", edit_student_registration_path %>
+
+<% end %>
