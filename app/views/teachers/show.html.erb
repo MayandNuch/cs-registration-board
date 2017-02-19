@@ -1,0 +1,9 @@
+<%= link_to "teachers", teachers_path %>
+<%= @teacher.email %>
+<%= @teacher.firstname %>
+<%= @teacher.lastname %>
+<%= @teacher.teacher_id %>
+<% if current_teacher == @teacher %>
+  <%= link_to "Edit", edit_teacher_registration_path %>
+
+<% end %>
