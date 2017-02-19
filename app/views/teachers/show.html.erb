@@ -5,5 +5,42 @@
 <%= @teacher.teacher_id %>
 <% if current_teacher == @teacher %>
   <%= link_to "Edit", edit_teacher_registration_path %>
-
+  <div class="row">
+      <%= form_for(@course) do |f| %>
+      <div class="field">
+        <%= f.label :coursename %><br />
+        <%= f.text_field :coursename %>
+      </div>
+      <div class="field">
+        <%= f.label :instructor %><br />
+        <%= f.text_field :instructor %>
+      </div>
+      <%= f.submit "create", class: "btn btn-primary" %>
+      <% end %>
+  </div>
 <% end %>
+
+<div class="col-md-8">
+    <% if @teacher.courses.any? %>
+      <h3>Courses (<%= @teacher.courses.count %>)</h3>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th></th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @teacher.courses.each do |course| %>
+            <tr>
+              <td><%= link_to course.coursename, course %></td>
+              <td><%= course.instructor%></td>
+              <td><%= link_to "delete", course, method: :delete,
+                                       data: { confirm: "You sure?" } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% end %>
+</div>
