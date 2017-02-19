@@ -26,9 +26,10 @@
       <table class="table">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>coursename</th>
+              <th>instructor</th>
+              <th>registered</th>
               <th></th>
-              <th>Email</th>
             </tr>
           </thead>
           <tbody>
@@ -36,6 +37,7 @@
             <tr>
               <td><%= link_to course.coursename, course %></td>
               <td><%= course.instructor%></td>
+              <td><%= course.students.count%></td>
               <td><%= link_to "delete", course, method: :delete,
                                        data: { confirm: "You sure?" } %></td>
             </tr>

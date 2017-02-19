@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'students#index'
+  root to: 'courses#index'
   get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
   get 'teachers' => 'teachers#index'

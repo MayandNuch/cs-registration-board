@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course.destroy
+    Course.find(params[:id]).destroy
     flash[:success] = "Course deleted"
     redirect_to request.referrer || current_teacher
   end
