@@ -1,48 +1,76 @@
-<%= link_to "teachers", teachers_path %>
-<%= @teacher.email %>
-<%= @teacher.firstname %>
-<%= @teacher.lastname %>
-<%= @teacher.teacher_id %>
-<% if current_teacher == @teacher %>
-  <%= link_to "Edit", edit_teacher_registration_path %>
-  <div class="row">
-      <%= form_for(@course) do |f| %>
-      <div class="field">
-        <%= f.label :coursename %><br />
-        <%= f.text_field :coursename %>
-      </div>
-      <div class="field">
-        <%= f.label :instructor %><br />
-        <%= f.text_field :instructor %>
-      </div>
-      <%= f.submit "create", class: "btn btn-primary" %>
-      <% end %>
-  </div>
-<% end %>
 
-<div class="col-md-8">
-    <% if @teacher.courses.any? %>
-      <h3>Courses (<%= @teacher.courses.count %>)</h3>
-      <table class="table">
+
+<div class="container">
+
+
+    <div class="profile-head" style="color:white;">
+        <div class="col-md- col-sm-4 col-xs-12">
+          <img src="/assets/teacher.jpg" class="img-responsive">
+          <h6><%= @teacher.firstname %> <%= @teacher.lastname %></h6>
+        </div><!--col-md-4 col-sm-4 col-xs-12 close-->
+        <div class="col-md-5 col-sm-5 col-xs-12 transparent-box">
+          <h1 style="font-size: 40px;"><%= @teacher.firstname %> <%= @teacher.lastname %> (Teacher)</h1>
+          <ul style="font-size: 15px;">
+          <li><span class="glyphicon glyphicon-education" ></span>  ID: <%= @teacher.teacher_id %></li>
+          <li><span class="glyphicon glyphicon-map-marker"></span> Thailand</li>
+          <li><span class="glyphicon glyphicon-envelope"></span><a style="color:white;" href="#" title="mail"> <%= @teacher.email %></a></li>
+          </ul>
+          <% if current_teacher == @teacher %>
+            <%= button_to "Edit", edit_teacher_registration_path,class: "btn btn-default btn-block btn-custom", :method => :get  %>
+            <div style="width:110%">
+                <br>
+                <%= form_for(@course) do |f| %>
+                  <%= f.label :coursename %>
+                  <span style="color:black;"><%= f.text_field :coursename %></span>
+                  <%= f.label :instructor %>
+                  <span style="color:black;"><%= f.text_field :instructor%></span>
+                <br>
+                <br>
+                <div style="width:90%">
+                  <%= f.submit "create", class: "btn btn-default btn-block btn-success" %>
+
+                </div>
+                <% end %>
+            </div>
+          <% end %>
+        </div><!--col-md-8 col-sm-8 col-xs-12 close-->
+        <center>
+        <div class="container">
+
+          <div class="row col-md-6 col-md-offset-2 custyle" style="margin-left:300px;">
+            <p>Opened classes: <%= @teacher.courses.count %> class(es)</p>
+
+          <table class="table table-striped custab">
+            <a href="#" class="btn btn-success btn-xs pull-right" style="margin-bottom:10px;"><b>+</b>Create</a>
           <thead>
-            <tr>
-              <th>coursename</th>
-              <th>instructor</th>
-              <th>registered</th>
-              <th></th>
-            </tr>
+              <tr>
+                  <th>Course Name</th>
+                  <th>Instructor</th>
+                  <th>Seats Number</th>
+                  <th></th>
+              </tr>
           </thead>
-          <tbody>
+          <% if @teacher.courses.any? %>
             <% @teacher.courses.each do |course| %>
             <tr>
-              <td><%= link_to course.coursename, course %></td>
-              <td><%= course.instructor%></td>
-              <td><%= course.students.count%></td>
-              <td><%= link_to "delete", course, method: :delete,
-                                       data: { confirm: "You sure?" } %></td>
+                <td><%= link_to course.coursename, course %></td>
+                <td><%= course.instructor%></td>
+                <td><%= course.students.count%></td>
+                <td><%= button_to "delete", course, method: :delete,
+                                       data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
             </tr>
+              <% end %>
             <% end %>
-          </tbody>
-        </table>
-    <% end %>
+
+          </table>
+          </div>
+        </div>
+        <br>
+        </center>
+
+
+
+    </div><!--profile-head close-->
+
+
 </div>
