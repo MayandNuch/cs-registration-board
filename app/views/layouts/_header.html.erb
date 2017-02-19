@@ -1,6 +1,7 @@
 <ul class="nav nav-pills nav-justified">
   <li><a href="/students">Students</a></li>
   <li><a href="/teachers">Teachers</a></li>
+  <li><a href="/courses">Courses</a></li>
   <% if student_signed_in? %>
     <li><%= link_to "Profile", current_student %></li>
     <li><%= link_to "Sign Out", destroy_student_session_path, :method => :delete %></li>
