@@ -7,3 +7,25 @@
   <%= link_to "Edit", edit_student_registration_path %>
 
 <% end %>
+
+<div class="col-md-8">
+    <% if @student.courses.any? %>
+      <h3>Courses (<%= @student.courses.count %>)</h3>
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Coursename</th>
+              <th>instructor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @student.courses.each do |course| %>
+            <tr>
+              <td><%=link_to course.coursename,course%></td>
+              <td><%= course.instructor%></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% end %>
+</div>

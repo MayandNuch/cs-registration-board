@@ -6,7 +6,7 @@
           <th>Course Name</th>
           <th>Instructor</th>
           <th>Registered seat</th>
-          
+
         </tr>
       </thead>
       <tbody>
@@ -14,7 +14,7 @@
         <tr>
           <td><%= link_to course.coursename, course %></td>
           <td><%= course.instructor%></td>
-
+          <td><%= course.students.count%></td>
         </tr>
         <% end %>
       </tbody>

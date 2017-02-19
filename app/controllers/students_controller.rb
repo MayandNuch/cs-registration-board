@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
   def show
     begin
       @student = Student.find(params[:id])
+      @courses = @student.courses
     rescue
       redirect_to students_path
     end
