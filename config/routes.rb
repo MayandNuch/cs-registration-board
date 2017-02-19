@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :courses do
     member do
       put :add_student
+      put :delete_student
     end
   end
 

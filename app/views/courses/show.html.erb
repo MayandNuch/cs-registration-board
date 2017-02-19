@@ -19,7 +19,11 @@
             <table class="table table-striped custab">
             <thead>
             <% if student_signed_in? %>
-                <%= link_to "Join", add_student_course_path(@course), :method => :put ,class:"btn btn-success btn-xs pull-right"%>
+                <% if current_student.courses.exists?(@course)%>
+                   <%= link_to "Drop", delete_student_course_path(@course), :method => :put ,class:"btn btn-danger btn-xs pull-right"%>
+                <% else %>
+                  <%= link_to "Join", add_student_course_path(@course), :method => :put ,class:"btn btn-success btn-xs pull-right"%>
+                <% end %>
             <% end %>
             <!-- <a href="#" class="btn btn-danger btn-xs pull-right" style="margin-right:10px;"><b>-</b>Retreat</a> -->
                 <tr>

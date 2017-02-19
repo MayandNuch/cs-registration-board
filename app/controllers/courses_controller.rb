@@ -40,6 +40,17 @@ class CoursesController < ApplicationController
      end
    end
 
+   def delete_student
+      @student = current_student
+      @course = Course.find(params[:id])
+      if @student.courses.exists?(@course)
+        @student.courses.delete(@course)
+        redirect_to @course
+      else
+        redirect_to @course
+      end
+    end
+
   private
 
     def course_params
