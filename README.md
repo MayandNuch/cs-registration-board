@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+This project is for Webapp class and muic cs registration usage.
 
 * Ruby version
 
-* System dependencies
+  2.3.1
 
-* Configuration
+* Rails version
 
-* Database creation
+  5.0.1
 
-* Database initialization
+* How to run
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  $ rails s
