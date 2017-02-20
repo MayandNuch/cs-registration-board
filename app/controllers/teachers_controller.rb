@@ -9,7 +9,7 @@ class TeachersController < ApplicationController
       @courses = @teacher.courses
       @course = current_teacher.courses.build if teacher_signed_in?
     rescue
-      redirect_to teachers_path
+      redirect_to root_url
     end
 
 
