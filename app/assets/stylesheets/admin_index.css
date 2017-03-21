@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.admin{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  /*padding-top: 60px;*/
+  /*margin-top: 60px;*/
+  position: fixed;
+}
+
+.vertical_nav{
+  /*margin-top: -30px;*/
+  /*margin-left: -120px;*/
+  width: 200px !important;
+}
+
+
+.alignment{
+  /*left: -30%;*/
+  /*bottom: -10%;*/
+  position: absolute;
+}
+
+.custom_container {
+  margin-left: 0px !important;
+
+}
+
+
+/*
+darkgoldenrod
+goldenrod
+steelblue
+*/
+
+.custom_canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-color: white;
+  height: 600px !important;
+  width: 600px !important;
+  padding-left: 10px;
+  /*padding-right: -40px;*/
+  /*padding-top: 50px;*/
+  /*padding-bottom: -50px;*/
+  border-radius: 10px;
+  border-width: 20px;
+  border-style: double;
+  border-color: black;
+  margin-left: -30px;
+}
+
+
+.navbar-default .navbar-nav>.active>a{
+  background-color: steelblue !important;
+}
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+
+.admin_profile {
+  margin-left: 60px;
+}
+
+.topic{
+  margin-left:40px;
+  margin-bottom: 30px;
+}

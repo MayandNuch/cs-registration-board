@@ -1,0 +1,14 @@
+.board{
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 50px;
+  width: 1500%;
+}
+
+.admin_courses{
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  /*padding-top: 60px;*/
+  /*margin-top: 60px;*/
+  position: fixed;
+}

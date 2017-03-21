@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   get 'teachers/:id' => 'teachers#show'
   get 'courses' => 'courses#index'
   get 'courses/:id' => 'courses#show'
-
+  get 'admin' => 'admin#index'
+  get 'admin/manage_courses' => 'admin#manage_courses'
+  get 'admin/manage_instructors' => 'admin#manage_instructors'
 end
