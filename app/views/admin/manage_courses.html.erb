@@ -18,18 +18,34 @@
       </div>
 
       <div class="col-sm-9 board">
-        <h2 class="topic">All courses : </h2>
-        <!-- <button type="button" class="btn btn-default admin_profile">Edit</button>
-        <button type="button" class="btn btn-success">Submit</button>
-        <div class="admin_profile">
-          <h3>Username : admin_email</h3>
-          <h3>Password : admin_password<h3>
-        </div> -->
+        <h4>Opened classes: <%= @extra_courses.length %> class(es)</h4>
 
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Instructor</th>
+                <th>Seats Number</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+          <% @extra_courses.each do |course| %>
 
+          <tr>
+              <td><%= course.coursename%></td>
+              <td><%= course.instructor%></td>
+              <td><%= course.students.count%></td>
+              <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
+              <td><%= button_to "delete", course, method: :delete,
+                                     data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
+          </tr>
+          <% end %>
 
-      </div>
-    </div>
+        </table>
 
   </div>
+</div>
+
+</div>
 </div>

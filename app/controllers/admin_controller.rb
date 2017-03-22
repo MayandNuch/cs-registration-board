@@ -1,8 +1,12 @@
 class AdminController < ApplicationController
+  attr_accessor :extra_courses
+
   def index
-    # @admins = Admin.all
-    # ActiveRecord::Base.inclue_root_in_json = false
     @courses = Course.all.to_json(include: [:students] ).to_s
+
+  end
+  def manage_courses
+    @extra_courses = Course.all
   end
   #
   # def show

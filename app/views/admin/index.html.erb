@@ -20,6 +20,7 @@
 
       <div class="col-sm-6">
         <h1 class="topic">Hi admin, welcome back!</h1>
+        
         <button type="button" class="btn btn-default admin_profile">Edit</button>
         <button type="button" class="btn btn-success">Submit</button>
         <div class="admin_profile">
@@ -27,9 +28,7 @@
           <h3>Password : admin_password<h3>
         </div>
       </div>
-      <!-- <%= javascript_tag do%>
-        window.Myvariable = '<%=@courses.inspect.html_safe%>';
-      <%end%> -->
+
       <div class="col-sm-3">
         <div id="canvas-holder" style="width:195%">
             <canvas class="custom_canvas" id="chart-area"></canvas>
@@ -118,6 +117,7 @@
   var colorNames = Object.keys(window.chartColors);
   document.getElementById('addData').addEventListener('click', function() {
     var courses = JSON.parse(<%= @courses.to_json.to_s.html_safe %>);
+    // console.log(courses.length);
     if (config.data.datasets.length >= 0) {
       courses.map ( (course) => {
         config.data.labels.push(course.coursename);
