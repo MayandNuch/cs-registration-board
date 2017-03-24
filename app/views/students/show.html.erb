@@ -20,12 +20,13 @@
         <div class="container">
 
           <div class="row col-md-6 col-md-offset-2 custyle" style="margin-left:300px;">
-            <p>Enrolled in: <%= @student.courses.count %> courses</p>
-          <table class="table table-striped custab">
+            <p class="up_margin">Enrolled in: <%= @student.courses.count %> courses</p>
+          <table class="table table-striped custab marg">
           <thead>
               <tr>
                   <th>Course Name</th>
                   <th>Instructor</th>
+                  <th></th>
                   <th></th>
               </tr>
           </thead>
@@ -35,7 +36,7 @@
                   <td><%= course.coursename%></td>
                   <td><%= course.instructor%></td>
                   <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
-
+                  <td><%= link_to "Drop", delete_student_course_path(course.id), :method => :put ,class:"btn btn-danger"%></td>
               </tr>
               <% end %>
             <% end %>

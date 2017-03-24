@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :students
-  resources :teachers          
+  resources :teachers
   resources :courses,          only: [:create, :destroy]
 
   resources :courses do
@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'courses#index'
-  get '/students' => 'students#index'
+  # get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
-  get 'teachers' => 'teachers#index'
+  # get 'teachers' => 'teachers#index'
   get 'teachers/:id' => 'teachers#show'
   get 'courses' => 'courses#index'
   get 'courses/:id' => 'courses#show'

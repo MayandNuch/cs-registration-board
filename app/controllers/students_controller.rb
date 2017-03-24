@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
-  def index
-    @students = Student.all
-  end
+  # def index
+  #   @students = Student.all
+  # end
 
   def show
     begin
@@ -11,4 +11,6 @@ class StudentsController < ApplicationController
       redirect_to students_path
     end
   end
+
+
 end

@@ -11,9 +11,8 @@ body, html {
 
 #login-box {
 	position: absolute;
-	top: 25%;
+	top: 15%;
 	left: 50%;
-
 	transform: translateX(-50%);
 	width: 350px;
 	margin: 0 auto;
@@ -21,7 +20,7 @@ body, html {
 	background: rgba(48, 46, 45, 1);
 	min-height: 250px;
 	padding: 20px;
-	z-index: 9999;
+	z-index: 10;
 
 }
 #login-box .logo .logo-caption {

@@ -1,7 +1,7 @@
 <!-- <script src="../assets/javascripts/Chart.bundle.js"></script> -->
 <!-- <script src="../assets/javascripts/utils.js"></script> -->
 
-<div class="admin" onload="test()">
+<div class="admin space" onload="test()">
   <div class="container custom_container">
     <div class="row">
       <div class="col-sm-2 vertical_nav">
@@ -20,7 +20,7 @@
 
       <div class="col-sm-6">
         <h1 class="topic">Hi admin, welcome back!</h1>
-        
+
         <button type="button" class="btn btn-default admin_profile">Edit</button>
         <button type="button" class="btn btn-success">Submit</button>
         <div class="admin_profile">
@@ -120,14 +120,16 @@
     // console.log(courses.length);
     if (config.data.datasets.length >= 0) {
       courses.map ( (course) => {
-        config.data.labels.push(course.coursename);
-        // console.log(course.students.length);
-        config.data.datasets.forEach(function(dataset) {
-            var colorName = colorNames[config.data.labels.length % colorNames.length];
-            dataset.backgroundColor.push(window.chartColors[colorName]);
-            dataset.data.push(course.students.length);
+        if (course.students.length > 0){
+          config.data.labels.push(course.coursename);
+          // console.log(course.students.length);
+          config.data.datasets.forEach(function(dataset) {
+              var colorName = colorNames[config.data.labels.length % colorNames.length];
+              dataset.backgroundColor.push(window.chartColors[colorName]);
+              dataset.data.push(course.students.length);
+          });
+        }
 
-        });
       })
     window.myPolarArea.update();
     }
