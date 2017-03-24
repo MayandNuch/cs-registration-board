@@ -13,4 +13,9 @@ class TeachersController < ApplicationController
     end
   end
 
+  def destroy
+    Teacher.find(params[:id]).destroy
+    flash[:success] = "Teacher deleted"
+    redirect_to request.referrer
+  end
 end

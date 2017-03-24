@@ -3,6 +3,7 @@
   border-radius: 10px;
   margin-left: 50px;
   width: 1500%;
+  /*color: white;*/
 }
 
 .admin_courses{
@@ -11,4 +12,15 @@
   /*padding-top: 60px;*/
   /*margin-top: 60px;*/
   position: fixed;
+  /*color: white;*/
+}
+
+.btn_add{
+  margin-bottom: 10px !important;
+  margin-left: 87%
+
+}
+
+.font{
+  color: white;
 }

@@ -18,14 +18,16 @@
       </div>
 
       <div class="col-sm-9 board">
-        <h4>Opened classes: <%= @extra_courses.length %> class(es)</h4>
+        <h2>Opened classes: <%= @extra_courses.length %> class(es)</h2>
+        <button  type="button" class="btn btn-success btn_add">Add course *</button>
 
-        <table class="table table-striped custab">
+        <table class="table table-striped custab font">
         <thead>
             <tr>
                 <th>Course Name</th>
                 <th>Instructor</th>
                 <th>Seats Number</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -37,6 +39,7 @@
               <td><%= course.instructor%></td>
               <td><%= course.students.count%></td>
               <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
+              <td><button  type="button" class="btn btn-warning btn_edit">Edit *</button></td>
               <td><%= button_to "delete", course, method: :delete,
                                      data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
           </tr>
