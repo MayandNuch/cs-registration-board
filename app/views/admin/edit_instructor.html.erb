@@ -1,0 +1,50 @@
+<div class="" style="margin-top:90px">
+  <div class="container custom_container">
+    <div class="row">
+      <div class="col-sm-3 vertical_nav">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><%= link_to "Profile", admin_path, method: :get%></li>
+                <li><%= link_to "Manage courses", admin_manage_courses_path%></li>
+                <li class="active"><%= link_to "Manage instructors", admin_manage_instructors_path%></li>
+                <!-- <li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-9 board">
+        <h2>Edit instructor_name profile</h2>
+        <form class="border">
+          <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input class="form-control" id="firstname" placeholder="Old_firstname">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Lastname</label>
+            <input class="form-control" id="lastname" placeholder="old_lastname">
+          </div>
+          <div class="form-group">
+            <label for="username">Username (email)</label>
+            <input class="form-control" id="username" placeholder="old_username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" id="password" placeholder="old_password">
+          </div>
+          <div class="form-group">
+            <label for="teacherid">Teacher ID</label>
+            <input class="form-control" id="teacherid" placeholder="old_teacher_id">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

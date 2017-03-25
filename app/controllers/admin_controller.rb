@@ -13,11 +13,17 @@ class AdminController < ApplicationController
   def manage_instructors
     @teachers = Teacher.all
     # delete method is the build in what it does inside
-  
+
     # add current_admin.courses.build if admin_signed_in?
   end
 
-
+  # def edit_course
+  #   @course = Course.find(params[:id])
+  # end
+  #
+  # def edit_instructor
+  #   @teacher = Teacher.find(params[:id])
+  # end
   # def show
   #   begin
   #     @admin = admin.find(params[:id])

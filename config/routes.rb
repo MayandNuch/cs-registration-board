@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'admin/manage_courses' => 'admin#manage_courses'
   get 'admin/manage_instructors' => 'admin#manage_instructors'
+  get 'admin/manage_courses/edit_course/' => 'admin#edit_course'
+  get 'admin/manage_courses/edit_instructor/' => 'admin#edit_instructor'
 end

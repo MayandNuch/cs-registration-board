@@ -1,0 +1,39 @@
+<div class="" style="margin-top:90px">
+  <div class="container custom_container">
+    <div class="row">
+      <div class="col-sm-3 vertical_nav">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><%= link_to "Profile", admin_path, method: :get%></li>
+                <li class="active"><%= link_to "Manage courses", admin_manage_courses_path%></li>
+                <li><%= link_to "Manage instructors", admin_manage_instructors_path%></li>
+                <!-- <li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-9 board">
+        <h2>Edit old_course_name </h2>
+        <form class="border">
+          <div class="form-group">
+            <label for="coursename">Course name</label>
+            <input class="form-control" id="coursename" placeholder="old_course_name">
+          </div>
+          <div class="form-group">
+            <label for="instructor">Instructor</label>
+            <input class="form-control" id="instructor" placeholder="old_instructor">
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
