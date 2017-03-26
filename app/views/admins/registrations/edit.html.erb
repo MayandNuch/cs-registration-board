@@ -1,0 +1,56 @@
+<div class="container">
+  	<div id="login-box" class="centered">
+  		<div class="logo">
+  			<img src="/assets/cat.jpg" class="img img-responsive img-circle center-block"/>
+  			<h1 class="logo-caption">Edit You<span class="tweak">R</span> Profile</h1>
+  		</div><!-- /.logo -->
+  		<div class="controls">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <span style="color:red;"><%= devise_error_messages! %></span>
+
+          <div class="field">
+            <span style="color:white;"><%= f.label :email %></span><br />
+            <%= f.email_field :email, autofocus: true,class:"form-control" %>
+          </div>
+
+          <div class="field">
+            <span style="color:white;"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></span>
+            <% if @minimum_password_length %>
+            <em><span style="color:white;">(<%= @minimum_password_length %> characters minimum)</span></em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off",class:"form-control" %>
+          </div>
+
+          <div class="field">
+            <span style="color:white;"><%= f.label :password_confirmation %> </span>
+            <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
+          </div>
+          <div class="field">
+            <span style="color:white;"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br /></span>
+            <%= f.password_field :current_password, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <span style="color:white;"><%= f.label :firstname %></span><br />
+            <%= f.text_field :firstname ,class:"form-control"%>
+          </div>
+          <div class="field">
+            <span style="color:white;"><%= f.label :lastname %></span><br />
+            <%= f.text_field :lastname ,class:"form-control"%>
+          </div>
+          <div class="actions">
+            <%= f.button "Update",class: "btn btn-default btn-block btn-custom" %>
+          </div>
+        <% end %>
+        <br>
+
+        <span style="color:red;"><h3>Cancel my account</h3></span>
+
+        <span style="color:white;"><p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p></span>
+
+        <%= button_to "Back",:back,class: "btn btn-default btn-block btn-custom", :method => :get  %>
+
+  		</div><!-- /.controls -->
+  	</div><!-- /#login-box -->
+  </div><!-- /.container -->
+  <div id="particles-js"></div>
