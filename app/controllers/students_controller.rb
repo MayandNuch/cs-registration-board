@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
       @student = Student.find(params[:id])
       @courses = @student.courses
     rescue
-      redirect_to students_path
+      redirect_to root_url
     end
   end
 end
