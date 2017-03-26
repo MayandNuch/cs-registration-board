@@ -48,6 +48,7 @@ div.transbox {
   font-family: 'Raleway', sans-serif;
   float: left;
   padding: 15px 5px;
+  margin-top: 90px;
 }
 
 div.transbox p {
@@ -67,4 +68,13 @@ div.transbox p {
 .table>thead:first-child>tr:first-child>th {
     border-top: 0;
     background-color: grey;
+}
+.marg{
+  margin-left: 60px;
+
+}
+
+.up_margin{
+  margin-top: -150px !important;
+  margin-left: 120px;
 }

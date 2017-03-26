@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
-  def index
-    @teachers = Teacher.all
-  end
+  # def index
+  #   @teachers = Teacher.all
+  # end
 
   def show
     begin
@@ -11,8 +11,11 @@ class TeachersController < ApplicationController
     rescue
       redirect_to root_url
     end
-
-
   end
 
+  def destroy
+    Teacher.find(params[:id]).destroy
+    flash[:success] = "Teacher deleted"
+    redirect_to request.referrer
+  end
 end

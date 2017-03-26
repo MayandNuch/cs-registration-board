@@ -45,9 +45,9 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
       if @student.courses.exists?(@course)
         @student.courses.delete(@course)
-        redirect_to @course
+        redirect_to request.referrer || @course
       else
-        redirect_to @course
+        redirect_to request.referrer || @course
       end
     end
 

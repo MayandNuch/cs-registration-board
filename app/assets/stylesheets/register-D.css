@@ -13,9 +13,9 @@ body, html {
     /*width: 25%;*/
 }
 
-#login-box {
+#login-box_register {
 	position: absolute;
-	top: 15%;
+	top: 15% ;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 350px;
@@ -89,4 +89,16 @@ body, html {
     margin-top: 8px;
     color: white;
 	font-family: 'Nunito', sans-serif;
+}
+
+.logo-caption{
+	color: white;
+}
+
+.color{
+	background-color: #ff5252 !important;
+}
+
+#error_explanation{
+	color: #ff5252;
 }

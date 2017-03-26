@@ -20,11 +20,15 @@ Rails.application.routes.draw do
   end
 
   root to: 'courses#index'
-  get '/students' => 'students#index'
+  # get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
-  get 'teachers' => 'teachers#index'
+  # get 'teachers' => 'teachers#index'
   get 'teachers/:id' => 'teachers#show'
   get 'courses' => 'courses#index'
   get 'courses/:id' => 'courses#show'
-
+  get 'admin' => 'admin#index'
+  get 'admin/manage_courses' => 'admin#manage_courses'
+  get 'admin/manage_instructors' => 'admin#manage_instructors'
+  get 'admin/manage_courses/edit_course/' => 'admin#edit_course'
+  get 'admin/manage_courses/edit_instructor/' => 'admin#edit_instructor'
 end

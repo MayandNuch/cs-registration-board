@@ -1,0 +1,53 @@
+<div class="admin_courses space">
+  <div class="container custom_container">
+    <div class="row">
+      <div class="col-sm-3 vertical_nav">
+        <div class="sidebar-nav">
+          <div class="navbar navbar-default" role="navigation">
+
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><%= link_to "Profile", admin_path, method: :get%></li>
+                <li><%= link_to "Manage courses", admin_manage_courses_path%></li>
+                <li class="active"><%= link_to "Manage instructors", admin_manage_instructors_path%></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-9 board">
+        <h2>All instructors: <%= @teachers.length %></h2>
+        <button  type="button" class="btn btn-success btn_add1">Add instructor *</button>
+        <table class="table table-striped custab font">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+          <% @teachers.each do |teacher| %>
+
+          <tr>
+              <td><%= teacher.firstname%></td>
+              <td><%= teacher.lastname%></td>
+              <td><%= teacher.email%></td>
+              <td><button  type="button" class="btn btn-info">instructor details *</button></td>
+              <td><button  type="button" class="btn btn-warning btn_edit">Edit *</button></td>
+              <td><%= button_to "delete", teacher, method: :delete,
+                                     data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
+
+          </tr>
+          <% end %>
+
+        </table>
+
+  </div>
+</div>
+
+</div>
+</div>
