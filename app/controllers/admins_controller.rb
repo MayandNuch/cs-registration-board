@@ -8,6 +8,7 @@ class AdminsController < ApplicationController
 
   def manage_courses
     @extra_courses = Course.all
+    @course = current_admin.courses.build
   end
 
   def manage_instructors
