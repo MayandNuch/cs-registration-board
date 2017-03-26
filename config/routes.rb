@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   devise_scope :student do
     get "/login" => "devise/sessions#new"
   end
-  
-  resources :admins
+
+  # resources :admins
   resources :students
   resources :teachers
   resources :courses,          only: [:create, :destroy]
@@ -28,9 +28,9 @@ Rails.application.routes.draw do
   get 'teachers/:id' => 'teachers#show'
   get 'courses' => 'courses#index'
   get 'courses/:id' => 'courses#show'
-  get 'admin' => 'admin#index'
-  get 'admin/manage_courses' => 'admin#manage_courses'
-  get 'admin/manage_instructors' => 'admin#manage_instructors'
-  get 'admin/manage_courses/edit_course/' => 'admin#edit_course'
-  get 'admin/manage_courses/edit_instructor/' => 'admin#edit_instructor'
+  get 'admins' => 'admins#index'
+  get 'admins/manage_courses' => 'admins#manage_courses'
+  get 'admins/manage_instructors' => 'admins#manage_instructors'
+  get 'admins/manage_courses/edit_course/' => 'admins#edit_course'
+  get 'admins/manage_courses/edit_instructor/' => 'admins#edit_instructor'
 end
