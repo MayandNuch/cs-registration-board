@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       put :add_student
       put :delete_student
       put :update_course
+      put :add_comment
     end
   end
 

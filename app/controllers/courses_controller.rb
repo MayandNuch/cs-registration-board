@@ -36,8 +36,33 @@ class CoursesController < ApplicationController
     begin
       @course = Course.find(params[:id])
       @students = @course.students
+      @comments = Comment.where(courses_id:params[:id] )
+      @comment = Comment.create
     rescue
       redirect_to courses_path
+    end
+  end
+
+  def add_comment
+    if current_teacher == nil && current_admin == nil && current_student == nil
+      redirect_to new_student_session_path
+    else
+      if current_teacher != nil
+        @person = current_teacher
+      elsif current_admin != nil
+        @person = current_admin
+      else
+        @person = current_student
+      end
+
+      @comment = Comment.create(courses_id:params[:id],email:@person.email,content:params[:comment][:content])
+      if @comment.save
+        flash[:success] = "Comment created!"
+        redirect_to request.referrer || root_url
+      else
+        flash[:error] = @comment.errors.full_messages
+        redirect_to request.referrer || root_url
+      end
     end
   end
 

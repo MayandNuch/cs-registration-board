@@ -1,0 +1,50 @@
+.add_comment_all{
+
+}
+
+.add_comment{
+
+}
+
+.centered3 {
+position: relative;
+top: 40%;
+left: 50%;
+/* bring your own prefixes */
+transform: translate(-50%, -50%);
+}
+
+.box1{
+border: 1px solid #d1dbe5;
+border-radius: 4px;
+background-color: #fff;
+overflow: hidden;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+width: 600px;
+height: 270px;
+color: black;
+}
+
+.topic3{
+  margin-top: 24px;
+  margin-left: 37%;
+
+}
+
+#Textarea{
+  margin-top: 20px;
+  width: 400px;
+  margin-left: 17%;
+}
+
+.btn13{
+  margin-left: 44%;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.glyphicon{
+  font-size: 18px;
+}

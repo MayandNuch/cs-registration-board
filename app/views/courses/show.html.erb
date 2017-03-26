@@ -46,7 +46,51 @@
             </div>
           </div>
         <br>
+
         </center>
+
+        <div class="add_comment_all " style="margin-top:50px; margin-left:20%;">
+
+          <div class="box1">
+
+            <div class="topic3">
+               <span class="glyphicon glyphicon-pencil inline" aria-hidden="true" style="margin-right:10px;"></span>
+              <h4 class="inline">Add Comment</h4>
+            </div>
+            <%= form_for @comment, :url => add_comment_course_path(@course.id), :method => :put do |f| %>
+              <div class="form-group">
+                <%= f.label :content %>
+                <%= f.text_area :content,class:"form-control",rows:"5" %>
+              </div>
+              <div class="actions">
+                <%= f.button :class=>"btn btn-success btn13"%>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <% @comments.each do |comment| %>
+        <div class="comment_all" style="margin-top:50px; margin-left:20%">
+
+          <div class="comment_section">
+            <div class="topic5">
+                <span class="glyphicon glyphicon-user inline" style="margin-right:10px;"aria-hidden="true"></span>
+                <h4 class="inline">Comment</h4>
+                <h5 class="" style="margin-left:12px;"> By <%= comment.email%></h5>
+            </div>
+
+            <div class="comment_content">
+                <%= comment.content%>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <% end %>
+
     </div>
     <div class="modal-footer">
         <center>
