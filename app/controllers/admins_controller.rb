@@ -3,7 +3,6 @@ class AdminsController < ApplicationController
 
   def index
     @courses = Course.all.to_json(include: [:students] ).to_s
-
   end
 
   def manage_courses

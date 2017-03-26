@@ -19,13 +19,10 @@
       </div>
 
       <div class="col-sm-6">
-        <h1 class="topic">Hi admin, welcome back!</h1>
-
-        <button type="button" class="btn btn-default admin_profile">Edit</button>
-        <button type="button" class="btn btn-success">Submit</button>
+        <h1 class="topic">Hi <%= current_admin.firstname%>, welcome back!</h1>
+        <%= button_to "Edit", edit_admin_registration_path,class: "btn btn-default admin_profile", :method => :get  %>
         <div class="admin_profile">
-          <h3>Username : admin_email</h3>
-          <h3>Password : admin_password<h3>
+          <h3>Username : <%= current_admin.email%></h3>
         </div>
       </div>
 
