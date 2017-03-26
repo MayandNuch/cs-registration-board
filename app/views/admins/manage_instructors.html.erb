@@ -18,7 +18,7 @@
 
       <div class="col-sm-9 board">
         <h2>All instructors: <%= @teachers.length %></h2>
-        <button  type="button" class="btn btn-success btn_add1">Add instructor *</button>
+        <%= button_to "Add instructor", new_teacher_registration_path , method: :get,class: "btn btn-success btn_add1"%>
         <table class="table table-striped custab font">
         <thead>
             <tr>
