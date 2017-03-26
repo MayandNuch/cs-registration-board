@@ -7,8 +7,8 @@
 
             <div class="navbar-collapse collapse sidebar-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><%= link_to "Profile", '/admins', method: :get%></li>
-                <li class="active"><%= link_to "Manage courses", '/admins/manage_courses'%></li>
+                <li ><%= link_to "Profile", '/admins', method: :get%></li>
+                <li><%= link_to "Manage courses", '/admins/manage_courses'%></li>
                 <li><%= link_to "Manage instructors", '/admins/manage_instructors'%></li>
                 <!-- <li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
               </ul>
@@ -19,29 +19,27 @@
 
       <div class="col-sm-9 board">
         <h2>Edit instructor_name profile</h2>
-        <form class="border">
-          <div class="form-group">
-            <label for="firstname">Firstname</label>
-            <input class="form-control" id="firstname" placeholder="Old_firstname">
-          </div>
-          <div class="form-group">
-            <label for="lastname">Lastname</label>
-            <input class="form-control" id="lastname" placeholder="old_lastname">
-          </div>
-          <div class="form-group">
-            <label for="username">Username (email)</label>
-            <input class="form-control" id="username" placeholder="old_username">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input class="form-control" id="password" placeholder="old_password">
-          </div>
-          <div class="form-group">
-            <label for="teacherid">Teacher ID</label>
-            <input class="form-control" id="teacherid" placeholder="old_teacher_id">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        <div class="border">
+            <%= form_for @teacher, :url => update_teacher_teacher_path(@teacher.id), :method => :put do |f| %>
+
+              <div class="field">
+                <%= f.label :firstname %>
+                <%= f.text_field :firstname, value:@teacher.firstname ,class:"form-control" %>
+              </div>
+              <div class="field">
+                <%= f.label :lastname %>
+                <%= f.text_field :lastname, value: @teacher.lastname ,class:"form-control"%>
+              </div>
+              <div class="field">
+                <%= f.label :teacher_id %>
+                <%= f.text_field :teacher_id, value: @teacher.teacher_id ,class:"form-control"%>
+              </div>
+              <div class="actions">
+                <%= f.button :class=>"btn btn-primary button"%>
+              </div>
+          <% end %>
+
+      </div>
 
       </div>
     </div>

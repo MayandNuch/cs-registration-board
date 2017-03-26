@@ -27,7 +27,6 @@
                 <th>Email</th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
           <% @teachers.each do |teacher| %>
@@ -36,8 +35,7 @@
               <td><%= teacher.firstname%></td>
               <td><%= teacher.lastname%></td>
               <td><%= teacher.email%></td>
-              <td><button  type="button" class="btn btn-info">instructor details *</button></td>
-              <td><button  type="button" class="btn btn-warning btn_edit">Edit *</button></td>
+              <td><%= button_to "Edit", edit_instructor_admin_path(teacher),:method => :get, class:"btn btn-warning btn_edit" %></td>
               <td><%= button_to "delete", teacher, method: :delete,
                                      data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
 

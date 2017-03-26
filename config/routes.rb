@@ -21,6 +21,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :teachers do
+    member do
+      put :update_teacher
+    end
+  end
+
   root to: 'courses#index'
   # get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
@@ -33,4 +39,12 @@ Rails.application.routes.draw do
   get 'admins/manage_instructors' => 'admins#manage_instructors'
   get 'admins/manage_courses/edit_course/' => 'admins#edit_course'
   get 'admins/manage_courses/edit_instructor/' => 'admins#edit_instructor'
+
+
+
+  resources :admins do
+    member do
+      get :edit_instructor
+    end
+  end
 end
