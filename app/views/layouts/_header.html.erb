@@ -12,6 +12,8 @@
         <% elsif teacher_signed_in? %>
           <li><%= link_to "Profile", current_teacher %></li>
           <li><%= link_to "Sign Out", destroy_teacher_session_path, :method => :delete %></li>
+        <% elsif admin_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to "SignIn", new_student_session_path, :method => :get %></li>
           <!-- <li><%= link_to "SignUp", new_student_registration_path, :method => :get %></li> -->

@@ -1,19 +1,31 @@
 class CoursesController < ApplicationController
   before_action :authenticate_teacher!, only: [:create, :destroy]
   def create
-    @course = current_teacher.courses.build(course_params)
-    if @course.save
-      flash[:success] = "Course created!"
-      redirect_to current_teacher
+    @course = Course.create(course_params)
+    if(teacher_signed_in?)
+      @person = current_teacher
     else
-      redirect_to root_url
+      @person = current_admin
     end
+    
+    if @course.update_attribute(:user, @person)
+      flash[:success] = "Course created!"
+      if(current_teacher != nil)
+        redirect_to current_teacher
+      else
+        redirect_to request.referrer || root_url
+      end
+    else
+      flash[:error] = @course.errors.full_messages
+      redirect_to request.referrer || root_url
+    end
+
   end
 
   def destroy
     Course.find(params[:id]).destroy
     flash[:success] = "Course deleted"
-    redirect_to request.referrer || current_teacher
+    redirect_to request.referrer || root_url
   end
 
   def index

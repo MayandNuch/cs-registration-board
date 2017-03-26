@@ -4,5 +4,5 @@ class Admin < ApplicationRecord
   validates_presence_of :firstname,:lastname
   devise :database_authenticatable, :registerable,
         :rememberable,:validatable
-
+  has_many :courses, as: :user
 end

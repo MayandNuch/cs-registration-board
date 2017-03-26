@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   devise_scope :student do
     get "/login" => "devise/sessions#new"
   end
-
+  
+  resources :admins
   resources :students
   resources :teachers
   resources :courses,          only: [:create, :destroy]

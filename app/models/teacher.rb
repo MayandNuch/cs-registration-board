@@ -5,5 +5,5 @@ class Teacher < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
-  has_many :courses
+  has_many :courses, as: :user
 end
