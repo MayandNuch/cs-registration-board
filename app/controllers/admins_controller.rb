@@ -20,11 +20,5 @@ class AdminsController < ApplicationController
   def edit_instructor
     @teacher = Teacher.find(params[:id])
   end
-  # def show
-  #   begin
-  #     @admin = Admins.find(params[:id])
-  #   rescue
-  #     redirect_to admins_path
-  #   end
-  # end
+
 end
