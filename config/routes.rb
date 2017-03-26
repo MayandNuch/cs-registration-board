@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do
       put :add_student
       put :delete_student
+      put :update_course
     end
   end
 
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
   resources :admins do
     member do
       get :edit_instructor
+      get :edit_course
     end
   end
 end

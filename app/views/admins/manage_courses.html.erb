@@ -39,10 +39,8 @@
               <td><%= course.instructor%></td>
               <td><%= course.students.count%></td>
               <td><%= button_to "course details", course, method: :get,class: "btn btn-info"%></td>
-              <td>
-              Edit **
-              </td>
-              <td><%= button_to "delete**", course, method: :delete,
+              <td><%= button_to "Edit", edit_course_admin_path(course),:method => :get, class:"btn btn-warning btn_edit" %></td>
+              <td><%= button_to "delete", course, method: :delete,
                                      data: { confirm: "You sure?" },class: "btn btn-danger"%></td>
           </tr>
           <% end %>

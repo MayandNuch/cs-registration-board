@@ -19,18 +19,20 @@
 
       <div class="col-sm-9 board">
         <h2>Edit old_course_name </h2>
-        <form class="border">
-          <div class="form-group">
-            <label for="coursename">Course name</label>
-            <input class="form-control" id="coursename" placeholder="old_course_name">
-          </div>
-          <div class="form-group">
-            <label for="instructor">Instructor</label>
-            <input class="form-control" id="instructor" placeholder="old_instructor">
-          </div>
+        <%= form_for @course, :url => update_course_course_path(@course.id), :method => :put do |f| %>
 
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+          <div class="field">
+            <%= f.label :coursename %>
+            <%= f.text_field :coursename, value:@course.coursename ,class:"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :instructor %>
+            <%= f.text_field :instructor, value: @course.instructor ,class:"form-control"%>
+          </div>
+          <div class="actions">
+            <%= f.button :class=>"btn btn-primary button"%>
+          </div>
+      <% end %>
 
       </div>
     </div>

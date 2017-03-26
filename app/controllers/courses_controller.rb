@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     else
       @person = current_admin
     end
-    
+
     if @course.update_attribute(:user, @person)
       flash[:success] = "Course created!"
       if(current_teacher != nil)
@@ -60,6 +60,20 @@ class CoursesController < ApplicationController
         redirect_to request.referrer || @course
       else
         redirect_to request.referrer || @course
+      end
+    end
+    def update_course
+      begin
+        @course = Course.find(params[:id])
+        if @course.update_attributes(coursename: params[:course][:coursename], instructor: params[:course][:instructor])
+          flash[:success] = "Profile updated."
+          redirect_to '/admins/manage_courses'
+        else
+          redirect_to   edit_course_path(@course)
+        end
+
+      rescue
+        redirect_to root_url
       end
     end
 
