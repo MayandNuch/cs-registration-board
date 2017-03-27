@@ -48,8 +48,12 @@
         <br>
 
         </center>
-
-        <div class="add_comment_all " style="margin-top:50px; margin-left:20%;">
+        <div class="modal-footer">
+            <center>
+            <a href="index.html"><button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about this class</button></a>
+            </center>
+        </div>
+        <div class="add_comment_all " style="margin-top:50px; margin-left:30%;">
 
           <div class="box1">
 
@@ -71,7 +75,7 @@
         </div>
 
         <% @comments.each do |comment| %>
-        <div class="comment_all" style="margin-top:50px; margin-left:20%">
+        <div class="comment_all" style="margin-top:50px; margin-left:30%">
 
           <div class="comment_section">
             <div class="topic5">
@@ -92,9 +96,5 @@
         <% end %>
 
     </div>
-    <div class="modal-footer">
-        <center>
-        <a href="index.html"><button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about this class</button></a>
-        </center>
-    </div>
+
   </div>
