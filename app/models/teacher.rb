@@ -6,4 +6,5 @@ class Teacher < ApplicationRecord
          :rememberable, :validatable
 
   has_many :courses, as: :user
+  has_many :comments, as: :commentor
 end
