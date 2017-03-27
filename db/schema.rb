@@ -35,13 +35,11 @@ ActiveRecord::Schema.define(version: 20170327041235) do
     t.text     "content"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "courses_id"
     t.string   "commentor_type"
     t.integer  "commentor_id"
     t.integer  "course_id"
     t.index ["commentor_type", "commentor_id"], name: "index_comments_on_commentor_type_and_commentor_id"
     t.index ["course_id"], name: "index_comments_on_course_id"
-    t.index ["courses_id"], name: "index_comments_on_courses_id"
   end
 
   create_table "courses", force: :cascade do |t|
