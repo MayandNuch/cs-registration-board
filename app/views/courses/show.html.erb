@@ -61,7 +61,7 @@
                <span class="glyphicon glyphicon-pencil inline" aria-hidden="true" style="margin-right:10px;"></span>
               <h4 class="inline">Add Comment</h4>
             </div>
-            <%= form_for @comment, :url => add_comment_course_path(@course.id), :method => :put do |f| %>
+            <%= form_for @comment, :url => comment_path(@course.id), :method => :post do |f| %>
               <div class="form-group">
                 <%= f.label :content %>
                 <%= f.text_area :content,class:"form-control",rows:"5" %>

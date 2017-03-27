@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   devise_for :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  namespace :students do
-    resources :course, only: [:index]
-  end
-
-  namespace :admin do
-    resources :course, only: [:index,:edit,:update]
-  end
+  # namespace :students do
+  #   resources :course, only: [:index]
+  # end
+  #
+  # namespace :admin do
+  #   resources :course, only: [:index,:edit,:update]
+  # end
 
   devise_scope :student do
     get "/login" => "devise/sessions#new"
@@ -21,13 +21,19 @@ Rails.application.routes.draw do
   resources :students
   resources :teachers
   resources :courses,          only: [:create, :destroy]
+  # resources :comments,          only: [:create, :destroy]
 
   resources :courses do
     member do
       put :add_student
       put :delete_student
       put :update_course
-      put :add_comment
+    end
+  end
+
+  resources :comment do
+    member do
+      post :create
     end
   end
 
