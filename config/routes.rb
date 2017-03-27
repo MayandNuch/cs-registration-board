@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     get "/login" => "devise/sessions#new"
   end
 
-  # resources :admins
   resources :students
   resources :teachers
   resources :courses,          only: [:create, :destroy]
@@ -44,9 +43,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'courses#index'
-  # get '/students' => 'students#index'
   get 'students/:id' => 'students#show'
-  # get 'teachers' => 'teachers#index'
   get 'teachers/:id' => 'teachers#show'
   get 'courses' => 'courses#index'
   get 'courses/:id' => 'courses#show'
