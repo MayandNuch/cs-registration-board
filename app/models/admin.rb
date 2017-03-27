@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :rememberable,:validatable
   has_many :courses, as: :user
+  has_many :comments, as: :commentor
 end
