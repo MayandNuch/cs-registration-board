@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
+  devise_for :admins, :controllers => {:registrations => "admins/registrations"}
   devise_for :teachers, :controllers => {:registrations => "teachers/registrations"}
   devise_for :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

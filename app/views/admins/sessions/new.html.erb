@@ -18,8 +18,11 @@
           <br>
           <div class="actions">
             <%= f.button "Log in",class: "btn btn-default btn-block btn-custom"%>
-
           </div>
+        <div id="regis">
+    			  Don't have an account?
+    			  <%= link_to "Register", new_admin_registration_path, :method => :get %>
+    		</div>
         <div id="regis">
             Are you Students?
              <%= link_to "Student's site", new_student_session_path, :method => :get %>
