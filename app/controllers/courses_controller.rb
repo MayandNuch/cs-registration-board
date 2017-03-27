@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
         @person = current_student
       end
 
-      @comment = Comment.create(courses_id:params[:id],email:@person.email,content:params[:comment][:content])
+      @comment = Comment.create(courses_id:params[:id],content:params[:comment][:content])
       if @comment.save
         flash[:success] = "Comment created!"
         redirect_to request.referrer || root_url
