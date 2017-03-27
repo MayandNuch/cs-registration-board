@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :students
   resources :teachers
   resources :courses,          only: [:create, :destroy]
-  # resources :comments,          only: [:create, :destroy]
+  resources :comment,          only: [:destroy]
 
   resources :courses do
     member do

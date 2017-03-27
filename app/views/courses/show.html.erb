@@ -82,6 +82,9 @@
                 <span class="glyphicon glyphicon-user inline" style="margin-right:10px;"aria-hidden="true"></span>
                 <h4 class="inline">Comment</h4>
                 <h5 class="" style="margin-left:12px;"> By <%= comment.commentor.firstname%> <%= comment.commentor.lastname%> <br> <%= comment.commentor.email%></h5>
+                <% if  comment.commentor  == current_student || comment.commentor == current_teacher ||comment.commentor == current_admin %>
+                  <%= link_to "Drop",comment_path(comment), :method => :delete ,class:"btn btn-danger btn-xs pull-right"%>
+                <% end %>
             </div>
 
             <div class="comment_content">
