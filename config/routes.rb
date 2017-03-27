@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, :controllers => {:registrations => "admins/registrations"}
+  devise_for :admins
   devise_for :teachers, :controllers => {:registrations => "teachers/registrations"}
   devise_for :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :students do
+    resources :course, only: [:index]
+  end
+
+  namespace :admin do
+    resources :course, only: [:index,:edit,:update]
+  end
 
   devise_scope :student do
     get "/login" => "devise/sessions#new"
