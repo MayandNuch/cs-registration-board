@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
     begin
       @course = Course.find(params[:id])
       @students = @course.students
-      @comments = Comment.where(courses_id:params[:id] )
+      @comments = Comment.where(course:params[:id] )
       @comment = Comment.create
     rescue
       redirect_to courses_path
@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
         @person = current_student
       end
       @course = Course.find(params[:id])
-      @comment = @course.comments.create(course_id:params[:id],content:params[:comment][:content],commentor: @person)
+      @comment = @course.comments.create(course:@course,content:params[:comment][:content],commentor: @person)
       if @comment.save
         flash[:success] = "Comment created!"
         redirect_to request.referrer || root_url

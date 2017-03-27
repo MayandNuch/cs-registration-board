@@ -3,8 +3,15 @@ class CommentController < ApplicationController
     if current_teacher == nil && current_admin == nil && current_student == nil
       redirect_to new_student_session_path
     else
-      @person = current_teacher = nil? current_admin == nil? current_student : current_admin : current_teacher
-      @comment = Comment.create(courses_id:params[:id],email:@person.email,content:params[:comment][:content])
+      if current_teacher != nil
+        @person = current_teacher
+      elsif current_admin != nil
+        @person = current_admin
+      else
+        @person = current_student
+      end
+      @course = Course.find(params[:id])
+      @comment = @course.comments.create(course:@course,content:params[:comment][:content],commentor: @person)
       if @comment.save
         flash[:success] = "Comment created!"
         redirect_to request.referrer || root_url

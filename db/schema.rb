@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327022614) do
+ActiveRecord::Schema.define(version: 20170327041235) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 20170327022614) do
     t.integer  "courses_id"
     t.string   "commentor_type"
     t.integer  "commentor_id"
+    t.integer  "course_id"
     t.index ["commentor_type", "commentor_id"], name: "index_comments_on_commentor_type_and_commentor_id"
+    t.index ["course_id"], name: "index_comments_on_course_id"
     t.index ["courses_id"], name: "index_comments_on_courses_id"
   end
 
