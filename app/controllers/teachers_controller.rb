@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :check_authenticated?
   # def index
   #   @teachers = Teacher.all
   # end
@@ -33,4 +34,13 @@ class TeachersController < ApplicationController
       redirect_to root_url
     end
   end
+  private
+
+    def check_authenticated?
+      if current_admin || current_teacher
+
+      else
+        redirect_to root_url
+      end
+    end
 end

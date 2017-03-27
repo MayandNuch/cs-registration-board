@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :check_authenticated?, only: [:create, :destroy]
+
   def create
     @course = Course.create(course_params)
     if(teacher_signed_in?)
@@ -108,7 +109,7 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:coursename,:instructor)
     end
     def check_authenticated?
-      if current_admin || current_teacher
+      if current_admin || current_teacher || current_student
 
       else
         redirect_to root_url

@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   attr_accessor :extra_courses
+  before_action :authenticate_admin!
 
   def index
     @courses = Course.all.to_json(include: [:students] ).to_s
